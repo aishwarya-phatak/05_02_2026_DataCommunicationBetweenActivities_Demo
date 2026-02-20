@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">05_02_2026_DataCommunicationBetweenActivities_Demo</string>
+    <string name="enter_the_username">Enter the username</string>
+    <string name="submit">Submit</string>
+    <string name="enter_the_email">Enter the Email</string>
+    <string name="back">Back</string>
+</resources>
