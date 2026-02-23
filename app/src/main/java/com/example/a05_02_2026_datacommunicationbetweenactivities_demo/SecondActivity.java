@@ -2,6 +2,7 @@ package com.example.a05_02_2026_datacommunicationbetweenactivities_demo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ public class SecondActivity extends AppCompatActivity {
         txtUsername = findViewById(R.id.txtUsername);
         edtEmail = findViewById(R.id.edtEmail);
         btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new BtnBackClickListener());
         getDataFromIntent();
     }
 
@@ -36,5 +38,18 @@ public class SecondActivity extends AppCompatActivity {
         extractedBatchName = i.getStringExtra("batch_name");
 
         txtUsername.setText(extractedUsername);
+    }
+
+    public class BtnBackClickListener implements View.OnClickListener{
+        @Override
+        public void onClick(View view) {
+            Intent i1 = new Intent();
+            i1.putExtra("city", "Pune");
+            i1.putExtra("blood_group","A+");
+            i1.putExtra("email",edtEmail.getText().toString());
+
+            setResult(1,i1);
+            finish();
+        }
     }
 }
